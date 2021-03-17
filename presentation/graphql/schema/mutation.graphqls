@@ -1,0 +1,17 @@
+input NewSchedule {
+  title: String!
+  startAt: Time!
+  endAt: Time!
+  userId: String!
+  description: String
+  participantsUserIds: [String!]
+}
+
+input NewUser {
+  name: String!
+}
+
+type Mutation {
+  createSchedule(input: NewSchedule!): Schedule!
+  createUser(input: NewUser!): User!
+}

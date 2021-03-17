@@ -1,0 +1,6 @@
+type Query {
+  schedule(id: ID!): Schedule!
+  schedules(ids: [ID!]!): [Schedule!]!
+  user(id: ID!): User!
+  users(ids: [ID!]!): [User!]!
+}

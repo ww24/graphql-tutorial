@@ -1,0 +1,33 @@
+schema:
+  - presentation/graphql/schema/*.graphqls
+
+exec:
+  filename: presentation/graphql/generated/generated.go
+  package: generated
+
+federation:
+  filename: presentation/graphql/generated/federation.go
+  package: generated
+
+model:
+  filename: presentation/graphql/model/models_gen.go
+  package: model
+
+resolver:
+  layout: follow-schema
+  dir: presentation/graphql/resolver
+  package: resolver
+  filename_template: "{name}.go"
+
+autobind:
+  - "github.com/ww24/graphql-tutorial/presentation/graphql/model"
+
+models:
+  User:
+    fields:
+      schedules:
+        resolver: true
+  Schedule:
+    fields:
+      createdBy:
+        resolver: true

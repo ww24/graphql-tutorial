@@ -1,0 +1,11 @@
+type Schedule {
+  id: ID!
+  title: String!
+  startAt: Time!
+  endAt: Time!
+  createdBy: User!
+  description: String
+  participants: [User!]!
+}
+
+scalar Time
